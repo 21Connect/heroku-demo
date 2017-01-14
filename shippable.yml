@@ -19,22 +19,10 @@ build:
     - echo 'running test 4' && sleep 15
     - echo 'running test 5' && sleep 15
   post_ci:
-    - docker build -t ttrahan/$REPO:$BRANCH.$BUILD_NUMBER .
-    - docker push $DOCKER_HUB_URL/$REPO:$BRANCH.$BUILD_NUMBER
+    - heroku git:remote -a sample-node-ayeaye -r heroku --ssh-git
+    - git push heroku master
 
 integrations:
-  hub:
-    - integrationName: ttrahan-dh
-      type: docker
-
-  notifications:
-    - integrationName: trigger-img-sample
-      type: webhook
-      payload:
-        - versionName=$BRANCH.$BUILD_NUMBER
-      branches:
-        only:
-          - master
-      on_success: always
-      on_failure: never
-      on_start: never
+  key:
+    - integrationName: heroku
+      type: ssh-key
