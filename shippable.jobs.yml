@@ -1,0 +1,80 @@
+jobs:
+
+# jobs for the sample node app pipeline from CI thru TEST environment
+
+################################
+
+# add pipeline workflow
+
+# manifest gen
+  - name: man-sample
+    type: manifest
+    steps:
+      - IN: img-sample
+        versionName: master.87
+      - IN: img-opts-sample
+      - TASK: managed
+
+# TEST deployment to Amazon ECS
+  - name: ecs-deploy-test-sample
+    type: deploy
+    steps:
+      - IN: man-sample
+      - IN: params-sample-test
+      - IN: env-test-ecs
+      - IN: trigger-sample-test
+      - IN: alb-demo-test
+        applyTo:
+          - manifest: man-sample
+            image: img-sample
+            port: 80
+      - TASK: managed
+
+# Create release for PROD
+  - name: release-sample
+    type: release
+    steps:
+      - IN: ver-sample
+        switch: off
+      - IN: ecs-deploy-test-sample
+        switch: off
+      - IN: trigger-release-prod
+      - TASK:   managed
+        bump: patch
+
+# PROD deployment to Amazon ECS
+  - name: ecs-deploy-prod-sample
+    type: deploy
+    steps:
+      - IN: release-sample
+        switch: off
+        # versionName: v1.0.1
+      - IN: params-sample-prod
+      - IN: trigger-sample-prod
+      - IN: replicas-sample-prod
+      - IN: alb-demo-prod
+        applyTo:
+          - manifest: man-sample
+            image: img-sample
+            port: 80
+      - IN: env-test-ecs
+      - TASK: managed
+
+#################################
+
+# manifest gen
+  - name: man-sample-triton
+    type: manifest
+    steps:
+      - IN: img-sample
+      - IN: img-opts-sample-triton
+      - TASK: managed
+
+# TEST deployment for VISUALIZER to Joyent Triton
+  - name: test-triton-sample
+    type: deploy
+    steps:
+      - IN: man-sample-triton
+      - IN: trigger-sample-test
+      - IN: env-test-triton
+      - TASK: managed

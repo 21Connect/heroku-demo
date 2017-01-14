@@ -1,0 +1,107 @@
+resources:
+
+# resources for sample-node-aye from CI thru TEST environment
+
+################################
+
+# add infrastructure resources
+
+# add env - AWS cluster
+  - name: env-test-ecs
+    type: cluster
+    integration: ttrahan-aws
+    pointer:
+      sourceName : "demo-shippable-ecs-test"
+      region: "us-east-1"
+
+# add AWS ALB target group for TEST
+  - name: alb-demo-test     #required
+    type: loadBalancer      #required
+    pointer:
+      sourceName: "arn:aws:elasticloadbalancing:us-east-1:288971733297:targetgroup/demoWebTest/56a74253de7101ee"
+      method: application
+
+# add AWS ALB target group for PROD
+  - name: alb-demo-prod     #required
+    type: loadBalancer      #required
+    pointer:
+      sourceName: "arn:aws:elasticloadbalancing:us-east-1:288971733297:targetgroup/demoWeb/29435cb0f31ac400"
+      method: application
+
+################################
+
+# Docker Image
+  - name: img-sample
+    type: image
+    integration: ttrahan-dh
+    pointer:
+      sourceName: ttrahan/sample_node_ayeaye
+      isPull: false
+    seed:
+      versionName: master.1
+
+################################
+
+# TEST resources
+
+# Docker Image Options
+  - name: img-opts-sample
+    type: dockerOptions
+    version:
+      memory: 64
+      cpuShares: 128
+      portMappings:
+        - 0:80
+      publishAllPorts : true
+
+# env vars for Test
+  - name: params-sample-test
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "TEST"
+        PORT: 80
+
+################################
+
+# set service version seed
+  - name: ver-sample
+    type: version
+    seed:
+      versionName: "1.0.0"
+
+################################
+
+# PROD resources
+
+# env vars for Prod
+  - name: params-sample-prod
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "PROD"
+
+# PROD replica controller
+  - name: replicas-sample-prod
+    type: replicas
+    version:
+      count: 2
+
+# ################################
+
+# add TEST env - Triton cluster
+  - name: env-test-triton
+    type: cluster
+    integration: ttrahan-tpc
+    pointer:
+      region: "us-west-1"
+
+# Docker Image Options
+  - name: img-opts-sample-triton
+    type: dockerOptions
+    version:
+      memory: 64
+      cpuShares: 128
+      portMappings:
+        - 80:80
+      publishAllPorts : true

@@ -1,0 +1,40 @@
+# Language setting
+language: node_js
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - REPO=sample_node_ayeaye
+    - DOCKER_HUB_URL=ttrahan # {account name}
+
+build:
+  ci:
+    - echo 'CI is running'
+    - echo 'running test 1' && sleep 15
+    - echo 'running test 2' && sleep 15
+    - echo 'running test 3' && sleep 15
+    - echo 'running test 4' && sleep 15
+    - echo 'running test 5' && sleep 15
+  post_ci:
+    - docker build -t ttrahan/$REPO:$BRANCH.$BUILD_NUMBER .
+    - docker push $DOCKER_HUB_URL/$REPO:$BRANCH.$BUILD_NUMBER
+
+integrations:
+  hub:
+    - integrationName: ttrahan-dh
+      type: docker
+
+  notifications:
+    - integrationName: trigger-img-sample
+      type: webhook
+      payload:
+        - versionName=$BRANCH.$BUILD_NUMBER
+      branches:
+        only:
+          - master
+      on_success: always
+      on_failure: never
+      on_start: never
