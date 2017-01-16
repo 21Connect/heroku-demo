@@ -8,15 +8,17 @@ branches:
 env:
   global:
     - APP_NAME=sample-node-ayeaye
+  # matrix:
+  #   - TEST_1=test_1.sh
+  #   - TEST_2=test_2.sh
+  #   - TEST_3=test_3.sh
+  #   - TEST_4=test_4.sh
+  #   - TEST_5=test_5.sh
 
 build:
   ci:
     - echo 'CI is running'
-    - echo 'running test 1' && sleep 15
-    - echo 'running test 2' && sleep 15
-    - echo 'running test 3' && sleep 15
-    - echo 'running test 4' && sleep 15
-    - echo 'running test 5' && sleep 15
+    - for file in ./tests/*; do ./$file; done
   post_ci:
     - git push -f git@heroku.com:$APP_NAME.git master
 
