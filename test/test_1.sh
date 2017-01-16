@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-echo "running test 1"
+echo "running test group 1"
 sleep 15s
 
 baseFile=${TEST_TO_RUN%.sh}
@@ -10,4 +10,4 @@ cd test/mocha
 istanbul cover _mocha *.js
 istanbul report cobertura --dir $CODE_COVERAGE_DIR
 
-echo "test 1 completed"
+echo "test 1 group completed"
