@@ -19,7 +19,7 @@ env:
 build:
   ci:
     - echo 'CI is running'
-    - npm install -g mocha@2.3.1
+    - npm install -g mocha@2.3.1 && npm install
     # # run tests in sequence (single build)
     # - for file in ./tests/*; do ./$file; done
     # run tests in parallel (matrix builds)
