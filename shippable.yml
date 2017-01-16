@@ -9,7 +9,7 @@ env:
   global:
     - APP_NAME=sample-node-ayeaye
     - TEST_RESULTS_DIR=shippable/testresults
-    - CODE_COVERAGE_DIR=shippable/testresults
+    - CODE_COVERAGE_DIR=shippable/codecoverage
   # expose to run tests in parallel via matrix build
   matrix:
     - TEST_1=test_1.sh
