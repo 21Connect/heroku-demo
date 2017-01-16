@@ -7,8 +7,7 @@ branches:
 
 env:
   global:
-    - REPO=sample_node_ayeaye
-    - DOCKER_HUB_URL=ttrahan # {account name}
+    - APP_NAME=sample_node_ayeaye
 
 build:
   ci:
@@ -19,8 +18,7 @@ build:
     - echo 'running test 4' && sleep 15
     - echo 'running test 5' && sleep 15
   post_ci:
-    - heroku git:remote -a sample-node-ayeaye -r heroku --ssh-git
-    - git push heroku master
+    - git push -f git@heroku.com:$APP_NAME.git master
 
 integrations:
   key:
