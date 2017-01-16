@@ -13,21 +13,16 @@ INTEGRATION=$4
 
 # execute
 install_tools
-install_terraform
 extract_previous_state $JOB
 load_params $PARAMS_RESOURCE
 extract_integration $INTEGRATION
 
 # Provision infrastructure via scripts
-echo -e "\n*** provisioning infrastructure on AWS ***"
-provision_infra() {
-  cd /build/IN/$SCRIPT_REPO/gitRepo
-  export AWS_ACCESS_KEY_ID=$aws_access_key_id
-  export AWS_SECRET_ACCESS_KEY=$aws_secret_access_key
-  export AWS_DEFAULT_REGION=$REGION
-  terraform plan
+echo -e "\n*** deploying to Heroku ***"
+deploy() {
+  # to come
 }
-provision_infra
+deploy
 
 # Processing complete
 echo -e "\n*** processing complete - ${BASH_SOURCE[0]} ***"
