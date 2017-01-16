@@ -7,7 +7,7 @@ branches:
 
 env:
   global:
-    - APP_NAME=sample_node_ayeaye
+    - APP_NAME=sample-node-ayeaye
 
 build:
   ci:
