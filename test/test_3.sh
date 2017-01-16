@@ -4,6 +4,6 @@ echo "running test 3"
 sleep 15s
 
 baseFile=${TEST_TO_RUN%.sh}
-mocha test/mocha/$baseFile.js
+mocha test/mocha/$baseFile.js -R mocha-junit-reporter --reporter-options mochaFile=$TEST_RESULTS_DIR/testresults.xml
 
- "test 3 completed"
+echo "test 3 completed"

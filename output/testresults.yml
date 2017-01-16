@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.003" tests="15" failures="0">
+  <testsuite name="Root Suite" timestamp="2017-01-16T20:59:49" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="index_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_1.js" failures="0" time="0.002">
+    <testcase name="index_GET should render index.html page on / GET" time="0.002" classname="should render index.html page on / GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="product_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_1.js" failures="0" time="0">
+    <testcase name="product_GET should render product.html page on /product GET" time="0" classname="should render product.html page on /product GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="aboutUs_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_1.js" failures="0" time="0">
+    <testcase name="aboutUs_GET should render about.html page on /about GET" time="0" classname="should render about.html page on /about GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="index_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_2.js" failures="0" time="0">
+    <testcase name="index_GET should render index.html page on / GET" time="0" classname="should render index.html page on / GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="product_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_2.js" failures="0" time="0">
+    <testcase name="product_GET should render product.html page on /product GET" time="0" classname="should render product.html page on /product GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="aboutUs_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_2.js" failures="0" time="0">
+    <testcase name="aboutUs_GET should render about.html page on /about GET" time="0" classname="should render about.html page on /about GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="index_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_3.js" failures="0" time="0">
+    <testcase name="index_GET should render index.html page on / GET" time="0" classname="should render index.html page on / GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="product_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_3.js" failures="0" time="0">
+    <testcase name="product_GET should render product.html page on /product GET" time="0" classname="should render product.html page on /product GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="aboutUs_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_3.js" failures="0" time="0">
+    <testcase name="aboutUs_GET should render about.html page on /about GET" time="0" classname="should render about.html page on /about GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="index_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_4.js" failures="0" time="0">
+    <testcase name="index_GET should render index.html page on / GET" time="0" classname="should render index.html page on / GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="product_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_4.js" failures="0" time="0">
+    <testcase name="product_GET should render product.html page on /product GET" time="0" classname="should render product.html page on /product GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="aboutUs_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_4.js" failures="0" time="0">
+    <testcase name="aboutUs_GET should render about.html page on /about GET" time="0" classname="should render about.html page on /about GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="index_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_5.js" failures="0" time="0.001">
+    <testcase name="index_GET should render index.html page on / GET" time="0.001" classname="should render index.html page on / GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="product_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_5.js" failures="0" time="0">
+    <testcase name="product_GET should render product.html page on /product GET" time="0" classname="should render product.html page on /product GET">
+    </testcase>
+  </testsuite>
+  <testsuite name="aboutUs_GET" timestamp="2017-01-16T20:59:49" tests="1" file="/Users/tomtra/ship-demo/heroku-demo/test/mocha/test_5.js" failures="0" time="0">
+    <testcase name="aboutUs_GET should render about.html page on /about GET" time="0" classname="should render about.html page on /about GET">
+    </testcase>
+  </testsuite>
+</testsuites>
