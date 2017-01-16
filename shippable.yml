@@ -18,7 +18,11 @@ env:
 build:
   ci:
     - echo 'CI is running'
-    - for file in ./tests/*; do ./$file; done
+    # # run tests in sequence (single build)
+    # - for file in ./tests/*; do ./$file; done
+    # run tests in parallel (matrix builds)
+    - tmp=TEST_$SHIPPABLE_JOB_NUMBER && export TEST_TO_RUN=${!tmp}
+    - ./tests/$TEST_TO_RUN
   post_ci:
     - git push -f git@heroku.com:$APP_NAME.git master
 
