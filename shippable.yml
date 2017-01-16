@@ -24,7 +24,7 @@ build:
     - npm install -g mocha istanbul && npm install
     - mkdir -p $TEST_RESULTS_DIR && mkdir -p $CODE_COVERAGE_DIR
     # run tests in sequence (single build)
-    - for file in ./test/*.sh; do tmp=TEST_$SHIPPABLE_JOB_NUMBER && export TEST_TO_RUN=${!tmp} && do ./$file; done
+    - for file in ./test/*.sh; do tmp=TEST_$SHIPPABLE_JOB_NUMBER && do export TEST_TO_RUN=${!tmp} && ./$file; done
     # # run tests in parallel (matrix builds) using env:matrix values above
     # - tmp=TEST_$SHIPPABLE_JOB_NUMBER && export TEST_TO_RUN=${!tmp}
     # - ./test/$TEST_TO_RUN
