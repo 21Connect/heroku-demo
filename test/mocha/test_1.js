@@ -5,7 +5,7 @@ var should = chai.should();
 
 chai.use(chaiHttp);
 
-describe('index_GET', function() {
+describe('test1', function() {
   it('should render index.html page on / GET', function(done) {
     // chai.request(server)
     //     .get('/')
@@ -17,7 +17,7 @@ describe('index_GET', function() {
   });
 });
 
-describe('product_GET', function() {
+describe('test2', function() {
   it('should render product.html page on /product GET', function(done) {
     // chai.request(server)
     //     .get('/')
@@ -29,7 +29,7 @@ describe('product_GET', function() {
   });
 });
 
-describe('aboutUs_GET', function() {
+describe('test3', function() {
   it('should render about.html page on /about GET', function(done) {
     // chai.request(server)
     //     .get('/')
