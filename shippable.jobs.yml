@@ -15,7 +15,7 @@ jobs:
       - IN: repo-sample
       - TASK:
         - script: . /build/IN/repo-sample/gitRepo/provInfra.sh repo-sample params-sample-test int-heroku
-        - script: git remote add test git@heroku.com:sample-node-ayeaye-test.git
+        - script: git remote add test git@heroku.com:testdeployshipppable.git
         - script: git push test master
 
 
@@ -28,5 +28,5 @@ jobs:
       - IN: repo-sample
       - TASK:
         - script: . /build/IN/repo-sample/gitRepo/provInfra.sh repo-sample params-sample-prod int-heroku
-        - script: git remote add test git@heroku.com:sample-node-ayeaye-test.git
+        - script: git remote add test git@heroku.com:testdeployshipppable.git
         - script: git push test master

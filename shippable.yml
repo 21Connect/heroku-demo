@@ -7,7 +7,7 @@ branches:
 
 env:
   global:
-    - APP_NAME=sample-node-ayeaye
+    - APP_NAME=testdeployshipppable
     - TEST_RESULTS_DIR=shippable/testresults
     - CODE_COVERAGE_DIR=shippable/codecoverage
   # expose to run tests in parallel via matrix build
