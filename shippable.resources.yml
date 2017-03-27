@@ -7,16 +7,16 @@ resources:
 # retrieve SSH keys for accessing Heroku
   - name: int-heroku
     type: integration
-    integration: heroku
+    integration: herokuaccesskey
 
 ################################
 
 # application code
   - name: repo-sample
     type: gitRepo
-    integration: ttrahan-gh
+    integration: github
     pointer:
-      sourceName: ttrahan/heroku-demo
+      sourceName: 21Connect/heroku-demo
       branch: master
 
 ################################

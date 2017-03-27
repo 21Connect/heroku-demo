@@ -33,5 +33,5 @@ build:
 
 integrations:
   key:
-    - integrationName: heroku
+    - integrationName: herokuaccesskey
       type: ssh-key
